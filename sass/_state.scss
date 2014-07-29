@@ -1,0 +1,32 @@
+//State styles
+/* Extra Small  *****************************************************/
+@media screen and (max-width: $break-small) {
+  .SliDe {
+    ul {
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Small ****************************************************/
+@media screen and (min-width: $break-small + 1) and (max-width: $break-medium) {
+
+}
+
+/* Medium ***************************************************/
+@media screen and (min-width: $break-medium + 1) and (max-width: $break-large) {
+
+}
+
+/* Large  **********************************************/
+@media screen and (min-width: $break-large) {
+  .SliDe {
+    ul {
+      li {
+        width: 33%;
+      }
+    }
+  }
+}
