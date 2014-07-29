@@ -4,6 +4,9 @@
   .SliDe {
     ul {
       li {
+        left: 0;
+        position: absolute;
+        top: 0;
         width: 100%;
       }
     }
@@ -11,17 +14,7 @@
 }
 
 /* Small ****************************************************/
-@media screen and (min-width: $break-small + 1) and (max-width: $break-medium) {
-
-}
-
-/* Medium ***************************************************/
-@media screen and (min-width: $break-medium + 1) and (max-width: $break-large) {
-
-}
-
-/* Large  **********************************************/
-@media screen and (min-width: $break-large) {
+@media screen and (min-width: $break-small + 1) {
   .SliDe {
     ul {
       li {
@@ -29,4 +22,14 @@
       }
     }
   }
+}
+
+/* Medium ***************************************************/
+@media screen and (min-width: $break-medium + 1) {
+
+}
+
+/* Large  **********************************************/
+@media screen and (min-width: $break-large) {
+  
 }
