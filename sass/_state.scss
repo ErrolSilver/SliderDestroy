@@ -1,32 +1,26 @@
 //State styles
 /* Extra Small  *****************************************************/
 @media screen and (max-width: $break-small) {
-  .SliDe {
-    ul {
-      li {
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
-    }
-  }
-}
 
+}
 /* Small ****************************************************/
 @media screen and (min-width: $break-small + 1) {
-  .SliDe {
-    ul {
-      li {
-        width: 33%;
-      }
+  .carousel-inner {
+    .item {
+      display: inline-block;
+      width: 32.9%;
     }
   }
 }
 
 /* Medium ***************************************************/
 @media screen and (min-width: $break-medium + 1) {
-
+  .carousel-inner {
+    .item {
+      display: inline-block;
+      width: 33%;
+    }
+  }
 }
 
 /* Large  **********************************************/
