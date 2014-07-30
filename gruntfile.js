@@ -20,17 +20,6 @@ module.exports = function(grunt) {
       }
     }, // End Uglify
 
-    imagemin: {
-      dynamic: {
-        files: [{
-          expand: true,
-          cwd: 'img/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'img/compressed/'
-        }]
-      }
-    }, // End Imagemin
-
     compass: {
       dist: {
         options: {
