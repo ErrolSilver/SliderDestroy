@@ -5,21 +5,29 @@
 }
 /* Small ****************************************************/
 @media screen and (min-width: $break-small + 1) {
-  .carousel-inner {
-    .item {
-      display: inline-block;
-      width: 32.9%;
-    }
+  .threeSlides {
+    display: inline-block!important;
+    width: 32.9%;
   }
 }
 
 /* Medium ***************************************************/
 @media screen and (min-width: $break-medium + 1) {
-  .carousel-inner {
-    .item {
-      display: inline-block;
-      width: 33%;
-    }
+  .threeSlides{
+    display: inline-block!important;
+    width: 33%;
+  }
+  .carousel-inner .active.left {
+    left: -25%;
+  }
+  .carousel-inner .active.right {
+    left: 25%;
+  }
+  .carousel-inner .next {
+    left: 25%;
+  }
+  .carousel-inner .prev {
+    left: -25%;
   }
 }
 

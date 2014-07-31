@@ -2114,26 +2114,53 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 }(jQuery);
 
 (function ($) {
-  console.log("Hello");
+  var $carousels = $('.carousel'),
+    $carItems = $('.carousel-inner')
+    $carIndicate = $('.carousel-indicators'),
+    $carControls = $('.carousel-control');
 
+    console.log($carItems.children('.item').length);
   function sideBySide() {
-    if ($(window).width() > 768) {
-      $('#sliderDestroy').removeClass('slide');
-      $('.carousel-indicators').addClass('hidden');
-      $('.carousel-control').addClass('hidden');
+    if ($(window).width() > 768 && $carousels.children('.item').length < 3) {
+      $carousels.removeClass('slide');
+      $carIndicate.addClass('hidden');
+      $carControls.addClass('hidden');
+      $carItems.children('.item').addClass('threeSlides');
+      $carousels.carousel('pause');
+    }
+  }
+
+  function checkSlides() {
+    if ($carItems.children('.item').length > 3) {
+      $(this).children('.item').each(function () {
+        var next = $(this).next();
+        if (!next.length) {
+          next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i = 0; i < 2; i++) {
+          next = next.next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          next.children(':first-child').clone().appendTo($(this));
+        }
+      });
     }
   }
 
   $(window).resize(function () {
-    console.log ($(window).width());
     if ($(window).width() < 768) {
-      $('#sliderDestroy').addClass('slide');
-      $('.carousel-indicators').removeClass('hidden');
-      $('.carousel-control').removeClass('hidden');
+      $carousels.addClass('slide');
+      $carIndicate.removeClass('hidden');
+      $carControls.removeClass('hidden');
+      $carousels.carousel('cycle');
     } else {
       sideBySide();
     }
   });
 
-sideBySide();
+  sideBySide();
+  checkSlides();
 }(jQuery));
