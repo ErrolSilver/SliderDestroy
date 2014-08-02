@@ -1,5 +1,5 @@
 {
-  "name": "Slider Destroy",
+  "name": "sliderDestroy",
   "version": "0.1.0",
   "description": "slideshow to side by side elements",
   "devDependencies": {
