@@ -5,23 +5,7 @@
 }
 /* Small ****************************************************/
 @media screen and (min-width: $break-small + 1) {
-  .plusThree {
-    .carousel-inner .active.left {
-      left: -33%;
-    }
-    .carousel-inner .next {
-      left: 33%;
-    }
-    .carousel-inner .prev {
-      left: -33%;
-    }
-    .carousel-control.left,.carousel-control.right {
-      background-image:none;
-    }
-    img {
-      width: 100%;
-    }
-  }
+
 }
 /* Medium ***************************************************/
 @media screen and (min-width: $break-medium + 1) {
