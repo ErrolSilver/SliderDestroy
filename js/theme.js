@@ -26,23 +26,19 @@
 
       // If the window is larger than extra small screens, remove bootstrap carousel controls 
       $('.minusThree').removeClass('slide');
-      $('.minusThree .carousel-indicators').addClass('hidden');
+      $('.minusThree').children('.carousel-indicators').addClass('hidden');
       $('.minusThree .carousel-control').addClass('hidden');
 
       // Add class setting new slide width to display side-by-side
       $('.minusThree .carousel-inner .item').addClass('col-sm-4 active');
 
+      // Display slideshow items side-by-side
       $('.plusThree .carousel-inner .item').wrapInner('<div class="col-sm-4"></div>');
 
       // Prevent slideshow from running if above breakpoint
       $carousels.carousel('pause');
 
-      scrollSlides();
     }
-  }
-
-  function scrollSlides() {
-    
   }
 
   $(window).resize(function () {
