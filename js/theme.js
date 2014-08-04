@@ -7,21 +7,23 @@
     $carControls = $('.carousel-control');
 
 
-  function sideBySide() {
 
+  function slideNumber() {
     // Check carousels for their number of slides
     $carItems.each(function () {
       var children = $(this).find('.item').length,
         $parent = $(this).parent();
 
-      // Add a class to carousels with more than 3 slides
+      // Add a class to carousels depending on how many slides
       if (children > 3) {
         $parent.addClass('plusThree');
       } else if (children <= 3) {
         $parent.addClass('minusThree');
       }
     });
+  }
 
+  function sideBySide() {
     if ($(window).width() > 768) {
 
       // If the window is larger than extra small screens, remove bootstrap carousel controls 
@@ -33,16 +35,12 @@
       $('.minusThree .carousel-inner .item').addClass('col-sm-4 active');
 
       // Display slideshow items side-by-side
-      $('.plusThree .carousel-inner .item').wrapInner('<div class="col-sm-4"></div>');
+      //$('.plusThree .carousel-inner .item').wrapInner('<div class="col-sm-4"></div>');
 
       // Prevent slideshow from running if above breakpoint
       $carousels.carousel('pause');
 
-    }
-  }
-
-  $(window).resize(function () {
-    if ($(window).width() < 768) {
+    } else {
 
       // Restore bootstrap controls if extra small screen size
       $carousels.addClass('slide');
@@ -58,10 +56,13 @@
 
       // Run slideshow when extra small screen
       $carousels.carousel('cycle');
-    } else {
-      sideBySide();
     }
+  }
+
+  $(window).resize(function () {
+    sideBySide();
   });
 
+  slideNumber();
   sideBySide();
 }(jQuery));
